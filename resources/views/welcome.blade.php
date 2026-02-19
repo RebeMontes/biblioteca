@@ -71,9 +71,9 @@
                 <a href="#" class="nav-link text-gray-700 font-medium hover:text-blue-700">Eventos</a>
                 <a href="#" class="nav-link text-gray-700 font-medium hover:text-blue-700">Servicios</a>
                 <a href="#" class="nav-link text-gray-700 font-medium hover:text-blue-700">Contacto</a>
-                <button id="login-btn" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                <a href="{{ route('login') }}" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition duration-300 inline-flex items-center">
                     <i class="fas fa-sign-in-alt mr-2"></i>Iniciar Sesión
-                </button>
+                </a>
             </nav>
             
             <!-- Botón menú hamburguesa (móvil) -->
@@ -90,9 +90,9 @@
                 <a href="#" class="text-gray-700 font-medium py-2 border-b hover:text-blue-700">Eventos</a>
                 <a href="#" class="text-gray-700 font-medium py-2 border-b hover:text-blue-700">Servicios</a>
                 <a href="#" class="text-gray-700 font-medium py-2 border-b hover:text-blue-700">Contacto</a>
-                <button id="mobile-login-btn" class="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300 mt-2">
-                    <i class="fas fa-sign-in-alt mr-2"></i>Iniciar Sesión
-                </button>
+                <a href="{{ route('login') }}" class="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300 mt-2 inline-flex items-center">
+                    <i class="fas fa-sign-in-alt mr-2 "></i>Iniciar Sesión
+                </a>
             </div>
         </div>
     </header>
@@ -398,8 +398,6 @@
         // Elementos del DOM
         const hamburgerBtn = document.getElementById('hamburger-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        const loginBtn = document.getElementById('login-btn');
-        const mobileLoginBtn = document.getElementById('mobile-login-btn');
         const loginModal = document.getElementById('login-modal');
         const closeModalBtn = document.getElementById('close-modal');
         const loginForm = document.getElementById('login-form');
@@ -426,10 +424,6 @@
             loginModal.classList.add('hidden');
             document.body.style.overflow = 'auto'; // Restaurar scroll
         }
-        
-        // Event listeners para botones de login
-        loginBtn.addEventListener('click', showLoginModal);
-        mobileLoginBtn.addEventListener('click', showLoginModal);
         
         // Cerrar modal con botón X
         closeModalBtn.addEventListener('click', hideLoginModal);

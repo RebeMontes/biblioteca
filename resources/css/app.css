@@ -9,3 +9,64 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+ /* Estilos compartidos para ambos formularios */
+        .form-container {
+            min-height: calc(100vh - 140px);
+        }
+        
+        .form-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .form-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-input {
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        .input-icon {
+            transition: color 0.3s ease;
+        }
+        
+        .form-input:focus ~ .input-icon {
+            color: #3b82f6;
+        }
+        
+        .btn-primary {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+        
+        .separator {
+            position: relative;
+            text-align: center;
+        }
+        
+        .separator::before,
+        .separator::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 45%;
+            height: 1px;
+            background-color: #e5e7eb;
+        }
+        
+        .separator::before {
+            left: 0;
+        }
+        
+        .separator::after {
+            right: 0;
+        }
