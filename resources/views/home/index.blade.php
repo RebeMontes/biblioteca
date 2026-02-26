@@ -63,44 +63,66 @@
                             </div>
                         </div>
                     </div>
-                    
+
+                    <!-- Botón agregar libro -->
+                    <div class="flex justify-end mb-4">
+                        <a href="{{ route('libros.create') }}" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center gap-2">
+                            <i class="fas fa-plus"></i>
+                            <span>Agregar Libro</span>
+                        </a>
+                    </div>
+
                     <!-- Actividad reciente -->
                     <div class="bg-white rounded-lg shadow p-4 md:p-6 mb-6">
-                        <h3 class="text-lg font-semibold mb-4">Actividad Reciente</h3>
+                        <h3 class="text-lg font-semibold mb-4">Libros agregados</h3>
                         <div class="overflow-x-auto">
                             <table class="min-w-full divide-y divide-gray-200">
                                 <thead>
                                     <tr>
-                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Usuario</th>
-                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Libro</th>
-                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Fecha</th>
-                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Estado</th>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nombre</th>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ISBN</th>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Autor</th>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Editorial</th>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Categoría</th>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-gray-200">
+                                    @foreach($libros as $libro)
                                     <tr>
-                                        <td class="px-4 py-3">María Rodríguez</td>
-                                        <td class="px-4 py-3">Cien años de soledad</td>
-                                        <td class="px-4 py-3">15/05/2023</td>
-                                        <td class="px-4 py-3"><span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">Devuelto</span></td>
+                                        <td class="px-4 py-3 whitespace-nowrap ">
+                                            <div class="font-medium text-gray-900">{{ $libro->nombre }}</div>
+                                        </td>
+                                        <td class="px-4 py-3 whitespace-nowrap ">
+                                            <div class="text-gray-900">{{ $libro->isbn }}</div>
+                                        </td>
+                                        <td class="px-4 py-3 whitespace-nowrap ">
+                                            <div class="text-gray-900">{{ $libro->autor }}</div>    
+                                        </td>
+                                        <td class="px-4 py-3 whitespace-nowrap ">
+                                            <div class="text-gray-900">{{ $libro->editorial }}</div>
+                                        </td>
+                                        <td class="px-4 py-3 whitespace-nowrap ">
+                                            <div class="text-gray-900">{{ $libro->categoria->nombre }}</div>    
+                                        </td>
+                                        <td class="px-4 py-3 whitespace-nowrap text-sm font-medium">
+                                            <a href="{{ route('libros.edit', $libro->id) }}" class="text-blue-600 hover:text-blue-900">Editar</a>
+                                            <form action="{{ route('libros.destroy', $libro->id) }}" method="POST" class="inline-block">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="text-red-600 hover:text-red-900 ml-4">Eliminar</button>
+                                            </form>
+                                        </td>
                                     </tr>
-                                    <tr>
-                                        <td class="px-4 py-3">Carlos Pérez</td>
-                                        <td class="px-4 py-3">El principito</td>
-                                        <td class="px-4 py-3">16/05/2023</td>
-                                        <td class="px-4 py-3"><span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Prestado</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-4 py-3">Ana Gómez</td>
-                                        <td class="px-4 py-3">1984</td>
-                                        <td class="px-4 py-3">17/05/2023</td>
-                                        <td class="px-4 py-3"><span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full">Pendiente</span></td>
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
+                             <div class="px-6 py-4 border-t border-gray-200 flex items-center justify-between">
+                                {{ $libros->links() }}
+                    </div>
                         </div>
                     </div>
-                    
+
                     <!-- Información adicional -->
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                         <div class="bg-white rounded-lg shadow p-4 md:p-6">
