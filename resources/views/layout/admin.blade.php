@@ -65,7 +65,7 @@
 
                 <p class="px-4 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 mt-6">Sistema</p>
 
-                <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg text-red-600 hover:bg-red-50 transition">
+                <a href="{{ route('logout') }}" class="flex items-center gap-3 px-4 py-3 rounded-lg text-red-600 hover:bg-red-50 transition">
                     <i class="fas fa-sign-out-alt w-5 text-center"></i>
                     <span>Cerrar Sesión</span>
                 </a>

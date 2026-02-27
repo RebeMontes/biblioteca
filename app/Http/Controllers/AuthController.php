@@ -28,6 +28,8 @@ class AuthController extends Controller
             'name' => $validatedData['name'],
             'email' => $validatedData['email'],
             'password' => bcrypt($validatedData['password']),
+            "user_name"  => $validatedData['email'],
+            'user_type' => 'user',
         ]);
 
         #Log the user in
