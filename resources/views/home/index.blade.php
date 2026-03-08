@@ -64,6 +64,13 @@
                         </div>
                     </div>
 
+                    @if(session('success'))
+                        <div class="bg-green-100 text-green-700 px-4 py-2 rounded mb-4">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
+
                     <!-- Botón agregar libro -->
                     <div class="flex justify-end mb-4">
                         <a href="{{ route('libros.create') }}" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center gap-2">

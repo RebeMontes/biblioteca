@@ -12,10 +12,7 @@
                 <input type="text" name="nombre" id="nombre" class="w-full border rounded px-3 py-2" required>
             </div>
 
-            <div class="mb-4">
-                <label for="descripcion" class="block text-gray-700 font-bold mb-2">Descripción:</label>
-                <textarea name="descripcion" id="descripcion" class="w-full border rounded px-3 py-2" rows="4"></textarea>
-            </div>
             <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded">Guardar Categoría</button>
+            <a href="{{ route('categorias.index') }}" class="bg-gray-500 text-white px-4 py-2 rounded ml-2">Cancelar</a>
         </form>
 @endsection

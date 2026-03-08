@@ -13,22 +13,22 @@
         </div>
         <div class="mb-4">
             <label for="isbn" class="block text-gray-700 font-bold mb-2">ISBN:</label>
-            <input type="text" name="isbn" id="isbn" class="w-full border border-gray-300 p-2 rounded" required>
+            <input type="text" name="isbn" id="isbn" value="{{ old('isbn', $libro->isbn) }}" class="w-full border border-gray-300 p-2 rounded">
         </div>
 
         <div class="mb-4">
             <label for="autor" class="block text-gray-700 font-bold mb-2">Autor:</label>
-            <input type="text" name="autor" id="autor" class="w-full border border-gray-300 p-2 rounded" required>
+            <input type="text" name="autor" id="autor" value="{{ old('autor', $libro->autor) }}" class="w-full border border-gray-300 p-2 rounded">
         </div>
 
         <div class="mb-4">
             <label for="editorial" class="block text-gray-700 font-bold mb-2">Editorial:</label>
-            <input type="text" name="editorial" id="editorial" class="w-full border border-gray-300 p-2 rounded" required>
+            <input type="text" name="editorial" id="editorial" value="{{ old('editorial', $libro->editorial) }}" class="w-full border border-gray-300 p-2 rounded">
         </div>
 
         <div class="mb-4">
             <label for="categoria" class="block text-gray-700 font-bold mb-2">Categoría:</label>
-            <select name ="categoria" id="categoria" class="w-full border border-gray-300 p-2 rounded" required>
+            <select name ="categoria" id="categoria" class="w-full border border-gray-300 p-2 rounded">
                 <option value="">Seleccione una categoría</option>
                 @foreach($categorias as $categoria)
                     <option value="{{ $categoria->id }}" {{ $libro->categoria_id == $categoria->id ? 'selected' : '' }}>{{ $categoria->nombre }}</option>

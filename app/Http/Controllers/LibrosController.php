@@ -32,9 +32,6 @@ class LibrosController extends Controller
         $libro->editorial = $request->editorial;
         $libro->categoria_id = $request->categoria;
         $libro->save();
-        // Aquí puedes guardar los datos del libro en la base de datos
-        // Por ejemplo, usando el modelo Libro (si tienes uno definido)
-        // Libro::create($validatedData);
 
         // Redirigir a la página de creación con un mensaje de éxito
         return redirect()->route('home')->with('success', 'Libro creado exitosamente.');
@@ -69,7 +66,7 @@ class LibrosController extends Controller
         return redirect()->route('home')->with('success', 'Libro actualizado exitosamente.');
     }
 
-    function destroy($id)
+    public function destroy($id)
     {
         $libro = Libro::findOrFail($id);
         $libro->delete();
