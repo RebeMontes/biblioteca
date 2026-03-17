@@ -58,7 +58,7 @@
                     <span>Categorías</span>
                 </a>
 
-                <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition">
+                <a href="{{ route('usuarios.index') }}" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition">
                     <i class="fas fa-users w-5 text-center"></i>
                     <span>Usuarios</span>
                 </a>

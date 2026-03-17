@@ -12,7 +12,7 @@
                 <input type="text" name="nombre" id="nombre" class="w-full border rounded px-3 py-2" required>
             </div>
 
-            <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded">Guardar Categoría</button>
+            <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded">Guardar Usuario</button>
             <a href="{{ route('categorias.index') }}" class="bg-gray-500 text-white px-4 py-2 rounded ml-2">Cancelar</a>
         </form>
 @endsection
