@@ -63,6 +63,11 @@
                     <span>Usuarios</span>
                 </a>
 
+                <a href="{{ route('prestamos.index') }}" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition">
+                    <i class="fas fa-users w-5 text-center"></i>
+                    <span>Préstamos</span>
+                </a>
+
                 <p class="px-4 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 mt-6">Sistema</p>
 
                 <a href="{{ route('logout') }}" class="flex items-center gap-3 px-4 py-3 rounded-lg text-red-600 hover:bg-red-50 transition">
