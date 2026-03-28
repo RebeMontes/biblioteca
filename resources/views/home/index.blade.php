@@ -91,6 +91,7 @@
                                         <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Autor</th>
                                         <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Editorial</th>
                                         <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Categoría</th>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Estado</th>
                                         <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Acciones</th>
                                     </tr>
                                 </thead>
@@ -112,6 +113,20 @@
                                         <td class="px-4 py-3 whitespace-nowrap ">
                                             <div class="text-gray-900">{{ $libro->categoria->nombre }}</div>    
                                         </td>
+
+                                        <td class = "px-6 py-4 whitespace-nowrap">
+                                            @if($libro->estatus == 0)
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                    Disponible
+                                                </span>
+                                            @else
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                                                    Prestado
+                                                </span>
+                                            @endif
+
+                                        </td>
+
                                         <td class="px-4 py-3 whitespace-nowrap text-sm font-medium">
                                             <a href="{{ route('libros.edit', $libro->id) }}" class="text-blue-600 hover:text-blue-900">Editar</a>
                                             <form action="{{ route('libros.destroy', $libro->id) }}" method="POST" class="inline-block">
@@ -120,6 +135,7 @@
                                                 <button type="submit" class="text-red-600 hover:text-red-900 ml-4">Eliminar</button>
                                             </form>
                                         </td>
+
                                     </tr>
                                     @endforeach
                                 </tbody>
