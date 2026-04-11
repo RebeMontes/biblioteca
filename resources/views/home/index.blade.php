@@ -22,7 +22,7 @@
                                 </div>
                                 <div>
                                     <p class="text-gray-500">Total de libros</p>
-                                    <h3 class="text-2xl font-bold">1,248</h3>
+                                    <h3 class="text-2xl font-bold">{{ $total_libros }}</h3>
                                 </div>
                             </div>
                         </div>
@@ -34,7 +34,7 @@
                                 </div>
                                 <div>
                                     <p class="text-gray-500">Usuarios activos</p>
-                                    <h3 class="text-2xl font-bold">342</h3>
+                                    <h3 class="text-2xl font-bold">{{ $total_usuarios }}</h3>
                                 </div>
                             </div>
                         </div>
@@ -45,8 +45,8 @@
                                     <i class="fas fa-exchange-alt text-yellow-600 text-xl"></i>
                                 </div>
                                 <div>
-                                    <p class="text-gray-500">Préstamos activos</p>
-                                    <h3 class="text-2xl font-bold">15</h3>
+                                    <p class="text-gray-500">Libros prestados</p>
+                                    <h3 class="text-2xl font-bold">{{ $libros_prestados }}</h3>
                                 </div>
                             </div>
                         </div>
@@ -58,7 +58,7 @@
                                 </div>
                                 <div>
                                     <p class="text-gray-500">Pendientes</p>
-                                    <h3 class="text-2xl font-bold">3</h3>
+                                    <h3 class="text-2xl font-bold">{{ $devoluciones_pendientes }}</h3>
                                 </div>
                             </div>
                         </div>
