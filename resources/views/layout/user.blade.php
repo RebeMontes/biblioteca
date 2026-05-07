@@ -27,8 +27,8 @@
 
         <div class="flex items-center gap-4">
             <div class="hidden md:flex flex-col text-right mr-2">
-                <span class="text-sm font-bold">Administrador</span>
-                <span class="text-xs text-blue-200">admin@biblioteca.com</span>
+                <span class="text-sm font-bold">{{ auth()->user()->name }}</span>
+                <span class="text-xs text-blue-200">{{ auth()->user()->email }}</span>
             </div>
             <div class="h-10 w-10 rounded-full bg-blue-600 flex items-center justify-center border-2 border-blue-400">
                 <i class="fas fa-user"></i>

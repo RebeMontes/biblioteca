@@ -6,8 +6,9 @@
     <title>@yield('titulo', 'Panel de Administración')</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
+ 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
         .sidebar-transition { transition: transform 0.3s ease-in-out; }
     </style>
@@ -27,8 +28,8 @@
 
         <div class="flex items-center gap-4">
             <div class="hidden md:flex flex-col text-right mr-2">
-                <span class="text-sm font-bold">Administrador</span>
-                <span class="text-xs text-blue-200">admin@biblioteca.com</span>
+                <span class="text-sm font-bold"><a href="{{ route('usuarios.profile') }}" class="hover:underline">{{ auth()->user()->name }}</a></span>
+                <span class="text-xs text-blue-200">{{ auth()->user()->email }}</span>
             </div>
             <div class="h-10 w-10 rounded-full bg-blue-600 flex items-center justify-center border-2 border-blue-400">
                 <i class="fas fa-user"></i>
