@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Mail\UsuarioRegistrado;
+use Illuminate\Support\Facades\Mail;
+
 
 class AuthController extends Controller
 {
@@ -35,6 +38,9 @@ class AuthController extends Controller
         #Log the user in
         auth()->login($user);
         #Redirect to the home page
+
+        Mail::to($user->email)->send(new UsuarioRegistrado($user));
+
         return redirect()->route('home');
     }
 
