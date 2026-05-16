@@ -39,7 +39,7 @@ class AuthController extends Controller
         auth()->login($user);
         #Redirect to the home page
 
-        Mail::to($user->email)->send(new UsuarioRegistrado($user));
+        Mail::to($user->email)->queue(new UsuarioRegistrado($user));
 
         return redirect()->route('home');
     }
